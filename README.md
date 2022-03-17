@@ -1,13 +1,13 @@
 # vite + react + ts
 
 -   本项目基于 vite + react + ts
--   增加 react-router、 redux 、react-redux 、react-saga 
+-   增加 react-router、 redux 、react-redux 、react-saga
 
 ## 状态管理 store
 
 -   参考 dva-core ,移植了主要的状态管理逻辑， 可以在./src/store/models 文件下创建状态管理文件
-    - 支持 namespace、state、effect、reducers
-    - 还未增加 subscriptions 功能
+    -   支持 namespace、state、effect、reducers
+    -   还未增加 subscriptions 功能
 
 ```js
 const test2 = {
@@ -33,9 +33,9 @@ const test2 = {
 };
 ```
 
-##less 模块化
+## less 模块化
 
--   注意``` ./src/vite-env.d.ts ```这个文件 会保证样式模块化
+-   注意`./src/vite-env.d.ts`这个文件 会保证样式模块化
 -   样式文件增加 module 关键字,vite 识别我模块化
     -   `index.less ----> .index.module.less `
 
@@ -49,10 +49,12 @@ const test2 = {
         },
     },
 ```
-## TS描述文件
-- 在根目录 types 文件夹，里边是第三方模块的描述文件。因为某些第三方模块，比提供@types/xxx 的安装包，
-虽然内置的ts 描述文件 ，但需要手动引入。
-- 在```tsconfig.json ``` 文件中配置增加了``` ···"include": ["src", "types"]``` 指定了描述文件加载的位置
+
+## TS 描述文件
+
+-   在根目录 types 文件夹，里边是第三方模块的描述文件。因为某些第三方模块，比提供@types/xxx 的安装包，
+    虽然内置的 ts 描述文件 ，但需要手动引入。
+-   在`tsconfig.json ` 文件中配置增加了` ···"include": ["src", "types"]` 指定了描述文件加载的位置
 
 ## 目录结构
 
@@ -91,11 +93,8 @@ const test2 = {
 
 # eslint 支持
 
-- eslint-plugin-promise插件
-让开发者养成较好地使用promise的方式
-
-
-
+-   eslint-plugin-promise 插件
+    让开发者养成较好地使用 promise 的方式
 
 # vite 配置说明
 
