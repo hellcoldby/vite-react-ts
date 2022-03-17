@@ -1,0 +1,64 @@
+// 变量位于 '/config/theme_config.js' 下
+@header_height: 44px;
+
+.root {
+    height: 100vh;
+    width: 100vw;
+    background-color: #151619;
+}
+
+.header {
+    width: 100vw;
+    height: @header_height;
+}
+
+.content {
+    width: 100vw;
+    height: calc(~'100vh - @{header_height}');
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+
+    .side_menu {
+        flex: 0 0 290px;
+        position: relative;
+    }
+
+    .center_wrapper {
+        // flex: 1 0 400px;
+        // flex: 1 1 auto;
+        width: calc(~'100vw - 290px - 320px');
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+
+        .render_block {
+            min-height: 20%;
+            position: relative;
+        }
+        .data_panel {
+            min-height: 40px;
+            position: relative;
+            margin: 0 2px;
+        }
+    }
+
+    .control_panel {
+        flex: 0 0 320px;
+        position: relative;
+    }
+}
+
+.gutter_vertical {
+    transition: all 0.3s;
+    cursor: row-resize;
+
+    &:hover {
+        background-color: #3e7dff;
+    }
+}
+
+input::selection {
+    background-color: #3e7dff;
+}

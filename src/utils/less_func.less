@@ -1,0 +1,36 @@
+
+/** less 自适应 单位转换
+
+  less 中使用：
+  @import url("./less_func.less");
+  border: ~`vh("10px") ` solid red;
+*/
+.vh() {
+    @functions: ~`(function() {
+      var clientHeight = '1080px';
+      function convert(size) {
+        return typeof size === 'string' ?
+          +size.replace('px', '') : size;
+      }
+      this.vh = function(size) {
+        return convert(size) / convert(clientHeight)*100 + 'vh';
+      }
+    })()`;
+}
+.vh();
+
+.vw() {
+    @functions: ~`(function() {
+        var clientWidth = '1920px';
+        function convert(size) {
+          return typeof size === 'string' ?
+            +size.replace('px', '') : size;
+        }
+        this.vw = function(size) {
+          return convert(size) / convert(clientWidth)*100 + 'vw';
+        }
+      })()`;
+}
+
+
+.vw();
