@@ -73,8 +73,7 @@ const test2 = {
         ├── Home/                   // 首页
     ├── services                   // 全局请求
     ├── utils                      // 工具函数
-    ├── global.js                  // 可以在这里加入 polyfill
-    ├── app.js                     // 运行时配置文件
+    ├── App.tsx                     // 运行时配置文件
 ├── package.json
 ├── .gitignore                      // git要忽略的文件
 
