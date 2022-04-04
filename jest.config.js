@@ -22,9 +22,12 @@ module.exports = {
     
     // A list of paths to directories that Jest should use to search for files in
     roots: null,
+
+    setupFilesAfterEnv: ["@testing-library/jest-dom"],
+    testEnvironment: "jsdom",
   
     // The test environment that will be used for testing
-    testEnvironment: "node",
+    // testEnvironment: "node",
   
     // The glob patterns Jest uses to detect test files
     testMatch: [

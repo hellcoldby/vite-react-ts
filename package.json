@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "pre": "vite preview",
-    "test": "jest /jest",
+    "test": "jest /jest --colors --coverage",
     "lint": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx src/ "
   },
   "dependencies": {
