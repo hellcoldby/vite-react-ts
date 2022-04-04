@@ -5,6 +5,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import App from "../App";
 import Editor from "@pages/Editor";
+import Home from "@pages/Home";
 import { Provider } from "react-redux"; //状态注入全局
 import store from "../store"; //引入状态管理
 
@@ -13,8 +14,10 @@ export default function RouterConfig() {
         <Provider store={store}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<App />} />
-                    <Route path="editor" element={<Editor />} />
+                    <Route path="/" element={<App />} >
+                      <Route path="home" element={<Home />} />
+                      <Route path="editor" element={<Editor />} />
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </Provider>

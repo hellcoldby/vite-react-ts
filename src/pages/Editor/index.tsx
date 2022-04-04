@@ -3,7 +3,7 @@ import styles from './index.module.less';
 import cn from 'classnames';
 
 function Index(props) {
-    return <div className={styles.root}></div>;
+    return <div className={styles.root}>editor</div>;
 }
 
 export default Index;
