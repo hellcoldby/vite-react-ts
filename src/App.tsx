@@ -7,7 +7,7 @@ function App() {
     return (
         <div className={styles.root}>
             <nav>
-                <h1>首页</h1>;
+                <h1>首页</h1>
                 <Link to="/home">home</Link>
                 <Link to="/editor">editor</Link>
 
