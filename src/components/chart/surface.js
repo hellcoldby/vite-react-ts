@@ -2,10 +2,10 @@ import * as echarts from 'echarts';
 import 'echarts-gl';
 
 
-export default  function render(dom) {
+export default  function render(dom, data) {
   const myChart = echarts.init(dom);
 
-  let  option= {
+  let option= data? data: {
     tooltip: {},
     visualMap: {
       show: true,

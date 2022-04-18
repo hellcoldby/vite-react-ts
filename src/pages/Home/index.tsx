@@ -7,8 +7,6 @@ import { Dispatch } from 'redux';
 import render from '../../components/chart/surface.js';
 import MyEdit from '../../components/Moncao';
 
-
-
 interface IProps {
     children?: React.ReactNode;
     curOrder: number;
@@ -31,10 +29,14 @@ function Home(props: IProps) {
         let mon:any = null;
         if( editor.current ){
             mon = MyEdit(editor.current);
+            mon.onDidChangeModelContent(() => {
+                console.log(mon.getValue());
+                render(ball.current, JSON.parse( mon.getValue()));
+            });
             
         }
         return ()=> mon?.dispose();
-    },[editor.current, ball.current]);
+    },[]);
 
     return (
         <div className={styles.screen_box}>
