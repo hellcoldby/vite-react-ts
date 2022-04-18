@@ -31,6 +31,7 @@ function Home(props: IProps) {
         let mon:any = null;
         if( editor.current ){
             mon = MyEdit(editor.current);
+            
         }
         return ()=> mon?.dispose();
     },[editor.current, ball.current]);

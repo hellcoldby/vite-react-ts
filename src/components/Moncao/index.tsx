@@ -1,20 +1,19 @@
 import React, { useState, FC, ReactElement } from "react";
 
-import './userWorker';
-
-
-import 'monaco-editor/esm/vs/editor/editor.all.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/accessibilityHelp/accessibilityHelp.js';
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
-
+import { monaco } from './monaco';
 
 export default function MyEditor(dom){
 
-  monaco.editor.create(dom, {
+  return monaco.editor.create(dom, {
     value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
-    language: 'typescript'
+    language: 'typescript',
+    minimap: {
+      enabled: true
+    },
+    // theme: 'vs-dark',
   });
 
+ 
   
 }
 
