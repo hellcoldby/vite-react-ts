@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 import render from '../../components/chart/surface.js';
+import MyEdit from '../../components/Moncao';
+
+
 
 interface IProps {
     children?: React.ReactNode;
@@ -21,15 +24,24 @@ function Home(props: IProps) {
         props.testSaga();
     }, [props]);
     const ball = useRef(null);
+    const editor = useRef(null);
 
     useEffect(()=>{
         ball.current && render(ball.current);
-    },[])
+        let mon:any = null;
+        if( editor.current ){
+            mon = MyEdit(editor.current);
+        }
+        return ()=> mon?.dispose();
+    },[editor.current, ball.current]);
 
     return (
         <div className={styles.screen_box}>
             
-            <div className={styles.ball} ref={ball}></div>
+            <div className={styles.box} ref={ball}></div>
+            <div className={styles.code} ref={editor}>
+            
+            </div>
         </div>
     );
 }

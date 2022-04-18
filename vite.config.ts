@@ -2,13 +2,14 @@ import { ConfigEnv, UserConfigExport, defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import eslintPlugin from 'vite-plugin-eslint';
+import monacoEditorPlugin from "vite-plugin-monaco-editor"
 //公共配置
 const commonConfig = {
-    plugins: [eslintPlugin(), react({
-        // babel:{
-        //     configFile:true
-        // }
-    })],
+    plugins: [
+        eslintPlugin(), 
+        react(),
+        monacoEditorPlugin()
+    ],
     resolve: {
         extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
         alias: {

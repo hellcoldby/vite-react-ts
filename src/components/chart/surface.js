@@ -8,7 +8,7 @@ export default  function render(dom) {
   let  option= {
     tooltip: {},
     visualMap: {
-      show: false,
+      show: true,
       dimension: 2,
       min: -1,
       max: 1,
@@ -37,11 +37,14 @@ export default  function render(dom) {
         type: 'surface',
         parametric: true,
         // shading: 'albedo',
+        itemStyle: {
+          opacity: 0.3
+        },
         parametricEquation: {
           u: {
             min: -Math.PI,
             max: Math.PI,
-            step: Math.PI / 20
+            step: Math.PI / 50
           },
           v: {
             min: 0,
@@ -55,7 +58,7 @@ export default  function render(dom) {
             return Math.sin(v) * Math.cos(u);
           },
           z: function (u, v) {
-            return Math.cos(v);
+            return Math.cos(v)>0? 1: -1;
           }
         }
       }
