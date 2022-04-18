@@ -4,7 +4,11 @@ import { resolve } from 'path';
 import eslintPlugin from 'vite-plugin-eslint';
 //公共配置
 const commonConfig = {
-    plugins: [eslintPlugin(), react()],
+    plugins: [eslintPlugin(), react({
+        // babel:{
+        //     configFile:true
+        // }
+    })],
     resolve: {
         extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
         alias: {
@@ -41,13 +45,13 @@ const commonConfig = {
 const devConfig = {
     ...commonConfig,
     server: {
-        proxy: {
-            '/api': {
-                target: 'https://test-raycharts.raykite.com/',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''),
-            },
-        },
+        // proxy: {
+        //     '/api': {
+        //         target: 'https://test-raycharts.raykite.com/',
+        //         changeOrigin: true,
+        //         rewrite: (path) => path.replace(/^\/api/, ''),
+        //     },
+        // },
     },
 };
 

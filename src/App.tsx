@@ -7,16 +7,16 @@ function App() {
     return (
         <div className={styles.root}>
             <nav>
-                <h1>首页</h1>
+                <h1>图形测试</h1>
+            </nav>
+            
+            <aside className={styles.left}>
                 <Link to="/home">home</Link>
                 <Link to="/editor">editor</Link>
-
-            </nav>
-            <hr />
-
-            <Outlet />
-
-            
+            </aside>
+            <section>
+                <Outlet />
+            </section>
         </div>
     );
 }

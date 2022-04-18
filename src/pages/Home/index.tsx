@@ -4,6 +4,8 @@ import styles from './index.module.less';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
+import render from '../../components/chart/surface.js';
+
 interface IProps {
     children?: React.ReactNode;
     curOrder: number;
@@ -18,10 +20,16 @@ function Home(props: IProps) {
         props.updateTest();
         props.testSaga();
     }, [props]);
+    const ball = useRef(null);
+
+    useEffect(()=>{
+        ball.current && render(ball.current);
+    },[])
 
     return (
         <div className={styles.screen_box}>
-            <h1>Home</h1>
+            
+            <div className={styles.ball} ref={ball}></div>
         </div>
     );
 }
